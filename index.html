@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript: Loppuharjoitus</title>
+<!-- Määritellään sivustolle grid: yläosa, jonka alla kaksi kolumnia. -->
+
+    <style>
+    .item1 { grid-area: header; }
+    .item2 { grid-area: left; min-width: 245px; max-width: 245px; }
+    .item3 { grid-area: right; min-width: 245px; max-width: 245px; }
+
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+      'header header'
+      'left right';
+      grid-gap: 10px;
+      background-color: black;
+      padding: 10px;
+      grid-template-rows: 100px 400px;
+      width: 500px;
+    }
+
+    .grid-container > div {
+      background-color: lightgrey;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 16px;
+    }
+    </style>
+  </head>
+<body>
+
+<!-- Määritellään äänitiedostoille id:t, joihin viitataan js:stä. -->
+
+<audio id="vessaAudio">
+  <source src="audio/vessa.mp3" type="audio/mpeg">
+</audio>
+<audio id="poliisiAudio">
+  <source src="audio/poliisi.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Luodaan ylägridiin tekstisyotekenttä ja painonappi. -->
+
+<center>
+<div class="grid-container">
+  <div class="item1">
+    <input style="font-size:24px;" type="input" id="kentta">
+    <button style="font-size:24px;" class="submit" id="nappi" onclick="klik()">Klik!</button>
+  </div>
+  <div class="item2" id="vasen"></div>
+  <div class="item3" id="oikea"></div>
+</div>
+</center>
+</body>
+<script type="text/javascript" src="js/script.js"></script>
+</html>
